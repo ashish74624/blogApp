@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // Replace with your MongoDB connection string
-mongoose.connect('mongodb+srv://pkumarpatna4:IVFEqN9EjDuQXLC9@cluster0.bnlas.mongodb.net/Blog')
+mongoose.connect('your mongo db atlass url/Blog')
     .then(() => console.log('Connected to MongoDB Atlas'))
     .catch(err => console.log(err));
 
