@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog : <%= post.title %></title>
+    <title>Edit Post - <%= post.title %></title>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
-        <h1><%= post.title %></h1>
+        <h1>Edit Post</h1>
     </header>
     <section>
-        <p><%= post.content %></p>
+        <form action="/edit-post/<%= post._id %>" method="POST">
+            <input type="text" name="title" value="<%= post.title %>" required>
+            <textarea name="content" required><%= post.content %></textarea>
+            <button type="submit">Update Post</button>
+        </form>
         <a href="/">Back to Home</a>
     </section>
 </body>

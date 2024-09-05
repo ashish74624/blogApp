@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
@@ -23,10 +22,14 @@
     <section>
         <h2>Posts</h2>
         <ul>
-            <% posts.forEach((post, index) => { %>
+            <% posts.forEach((post) => { %>
                 <li>
                     <h3><a href="/post/<%= post._id %>"><%= post.title %></a></h3>
                     <p><%= post.content.substring(0, 100) %>...</p>
+                    <form action="/delete-post/<%= post._id %>" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                    <a href="/post/<%= post._id %>">Edit</a>
                 </li>
             <% }) %>
         </ul>
